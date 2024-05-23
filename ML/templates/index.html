@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Chintan</title>
+  <link rel="icon" href="./static/assets/Chintan_Web_Page_Logo.png">
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body style="background: #D3D3D3;">
+ <div class="login">
+	<h1>Chintan</h1>
+  <h3>How was your day today?</h3>
+
+     <!-- Main Input For Receiving Query to our ML -->
+
+    <form action="{{ url_for('predict')}}"method="post">
+        <input type="text" name="Enter the text here" placeholder="Enter your text here" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large">Submit</button>
+        <a href="/">Reset</a>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+</body>
+</html>

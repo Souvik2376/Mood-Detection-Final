@@ -1,0 +1,19 @@
+# keras tools
+Keras==2.4.3
+
+# tensorflow 2.x and extensions
+tensorflow==2.3.0
+
+# get TextBlob and dependencies
+textblob==0.15.3
+
+# fetch Streamlit
+streamlit==0.71.0
+
+# numerical computations & data manipulations
+numpy==1.19.4
+pandas==1.1.4
+
+# upload zipfile
+zipfile36 == 0.1.3
+
