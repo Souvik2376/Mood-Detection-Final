@@ -119,7 +119,7 @@ def predictor_page():
     # run the model load functions here:
 
     # create text input
-    text_label = "Text to Analyze"
+    text_label = "Please Enter Your Text"
     filled_text = " "
     ip = st.text_input(text_label, filled_text) 
     show_preds = False
@@ -144,7 +144,7 @@ def predictor_page():
         result = ["Hateful or Sad" if p <= 0.25 else "Demoralizing or Tense" if p <=
                   0.50 else "Neutral or Clam" if p <= 0.75 else "Overwhelming or Cheerful"]
         result = str(result[0]) + " Mood"
-        st.success('Predicted Text Class : {}'.format(result))
+        st.success('Predicted Mood : {}'.format(result))
 
         filling_up_bar = """
         latest_iteration = st.empty()
@@ -154,7 +154,7 @@ def predictor_page():
             bar.progress(i + 1)
         """
         latest_iteration = st.empty()
-        latest_iteration.text('Measured Positivity : ' +
+        latest_iteration.text('Measured Percentage : ' +
                               str(positivity_scale*100) + " %")
         bar = st.progress(positivity_scale)
 
@@ -182,7 +182,6 @@ def sidebar_nav():
     current_page = st.sidebar.radio(
         " ", ["Predictions"])
 
-    # st.markdown("""<br></br> <br>""",unsafe_allow_html=True)
     sidetext = """
     
     """
@@ -200,3 +199,21 @@ def sidebar_nav():
 
 ROOT_DIRECTORY = os.getcwd()
 sidebar_nav()
+
+# Add chatbot component at the bottom left corner
+chatbot_html = """
+<!-- Begin Tawk.to Script -->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/YOUR_TAWKTO_WIDGET_ID/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!-- End Tawk.to Script -->
+"""
+components.html(chatbot_html)
