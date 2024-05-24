@@ -41,7 +41,7 @@ def find(pattern, path):
 # list out the loading weight functionalities for the models :
 @st.cache
 def load_intermediate():
-    files = find("adam_acc_8643",  os.getcwd())
+    files = find("final_model",  os.getcwd())
     # model=keras.models.load_model("/content/adam_acc_8643.h5")
     model = keras.models.load_model(files[0])
     return model
