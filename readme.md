@@ -2,6 +2,7 @@
 
 This project demonstrates how Streamlit and NLP may be used to provide an engaging and dynamic user experience. LSTM, GRU, and Bidirectional are well-known natural language processing (NLP) models that are used in conjunction with TensorFlow, a crucial deep learning framework, to identify appropriate sentiment and to update deep learning models.
 
+
 A unique NLP model on the website is in charge of managing several machine learning activities. The Streamlit-built frontend efficiently communicates with the NLP model to provide real-time predictions, visualisations, and other features that take use of machine learning capabilities and prediction confidence performance.
 
 ## Features
