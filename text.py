@@ -29,7 +29,7 @@ def find(pattern, path):
 
 @st.cache_data
 def load_intermediate():
-    files = find("adam_acc_8643", os.getcwd())
+    files = find("final_model", os.getcwd())
     model = keras.models.load_model(files[0])
     return model
 
