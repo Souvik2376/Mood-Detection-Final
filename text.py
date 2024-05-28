@@ -9,7 +9,8 @@ import datetime
 import os
 import fnmatch
 import pandas as pd
-from textblob import TextBlob
+#from textblob import TextBlob
+from corpora import TextBlob
 import random
 import keras
 from keras.preprocessing import sequence
