@@ -20,6 +20,27 @@ from keras.layers import Conv1D, GlobalMaxPooling1D
 from keras.datasets import imdb
 from keras.layers import LSTM
 
+style_image1 = """
+width: auto;
+max-width: 750px;
+height: auto;
+max-height: 650px;
+display: block;
+justify-content: center;
+border-radius: 10%;
+"""
+
+style_image2 = """
+width: auto;
+max-width: 300px;
+height: auto;
+max-height: 200px;
+display: block;
+justify-content: center;
+border-radius: 10%;
+"""
+
+
 def find(pattern, path):
     result = []
     for root, dirs, files in os.walk(path):
@@ -111,7 +132,7 @@ def about_page():
     }
     </style>
     """
-    st.markdown(html_temp, unsafe_allow_html=True)
+    st.markdown(f'<img src="{"https://cdn.wallpapersafari.com/81/92/bSXJpj.jpg"}" style="{style_image1}">', unsafe_allow_html=True)
     st.title("About")
     st.write("""
         This application is a Mood Detection Predictor built using NLP. After cleaning up the 
@@ -129,8 +150,9 @@ def about_page():
         - Developed by Our Team
         
         **Github:**
-        -
+        - https://github.com/Souvik2376/Mood-Detection-Final 
     """)
+
 
 def writer(time=0, json_dict=None):
     with open('temp_data/data' + str(time) + '.txt', 'w') as outfile:
@@ -141,7 +163,8 @@ def sidebar_page(pages, header_img=None, title=None, text=None):
         st.sidebar.markdown(header_img, unsafe_allow_html=True)
 
 def sidebar_nav():
-    st.sidebar.markdown("""## Navigation Bar: <br> """, unsafe_allow_html=True)
+    st.sidebar.markdown(f'<img src="{"https://cdn.pixabay.com/photo/2017/10/06/09/39/project-2822430_1280.jpg"}" style="{style_image2}">', unsafe_allow_html=True)
+    st.sidebar.markdown("""## Navigation Bar: """, unsafe_allow_html=True)
     current_page = st.sidebar.radio("Navigation", ["Predictions", "About"])
     all_pages = {"Predictions": predictor_page, "About": about_page}
     func = all_pages[current_page]
