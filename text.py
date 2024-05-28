@@ -90,9 +90,9 @@ def predictor_page():
             mood = result[1]
         elif p <= 0.5:
             mood = result[2]
-        elif p <= 0.7:
+        elif p <= 0.65:
             mood = result[3]
-        elif p <= 0.9:
+        elif p <= 0.8:
             mood = result[4]
         else:
             mood = result[5]
