@@ -28,6 +28,14 @@ max-height: 650px;
 display: block;
 justify-content: center;
 border-radius: 10%;
+border: 5px solid transparent;
+background: linear-gradient(white, white), radial-gradient(circle at center, #ff7e5f, #feb47b);
+background-origin: border-box;
+background-clip: content-box, border-box;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+transition: transform 0.3s, box-shadow 0.3s;
+transform: scale(1.05);
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 """
 
 style_image2 = """
@@ -38,16 +46,52 @@ max-height: 200px;
 display: block;
 justify-content: center;
 border-radius: 10%;
+border: 5px solid transparent;
+background: linear-gradient(white, white), radial-gradient(circle at center, #ff7e5f, #feb47b);
+background-origin: border-box;
+background-clip: content-box, border-box;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+transition: transform 0.3s, box-shadow 0.3s;
+transform: scale(1.05);
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+"""
+
+style_image3 = """
+width: auto;
+max-width: 641px;
+height: auto;
+max-height: 360px;
+display: block;
+margin-left: auto;
+margin-right: auto;
+border-radius: 10%;
+border: 5px solid transparent;
+background: linear-gradient(white, white), radial-gradient(circle at center, #ff7e5f, #feb47b);
+background-origin: border-box;
+background-clip: content-box, border-box;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+transition: transform 0.3s, box-shadow 0.3s;
+transform: scale(1.05);
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 """
 
 page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
+margin: 0;
+padding: 0;
+height: 100vh;
 background-image: url("https://i.postimg.cc/QtnqXrJT/mesh-1430108-1280.png");
 background-size: cover;
 background-position: center center;
 background-repeat: no-repeat;
 background-attachment: local;
+display: flex;
+color: white;
+font-family: 'Arial', sans-serif;
+text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+text-align: center;
+padding: 20px;
 }}
 [data-testid="stHeader"] {{
 background: rgba(0,0,0,0);
@@ -119,9 +163,16 @@ def predictor_page():
         background-position: center center;
         background-repeat: no-repeat;
         background-attachment: local;">
-    <h1 style="color:#00FFFF;text-align:center;"><b> Mood Detection Predictor </b></h1>
+    <h1 style="color:#3c3c3c;
+            text-align: center;
+            font-size: 2.5em;
+            margin: 0.5em 0;
+            font-weight: bold;
+            "><b> Mood Detection Predictor </b></h1>
     </div>
     """
+    
+    st.markdown(f'<img src="{"https://i.postimg.cc/kMvTVkML/360-F-610438945-o-RLr15-Xzfkff-K8-LC14l-LNJl-Sf5q-GU5fv.jpg"}" style="{style_image3}">', unsafe_allow_html=True)
     st.markdown(html_temp, unsafe_allow_html=True)
     st.markdown("""<br>""", unsafe_allow_html=True)
     MODEL = model_predection
@@ -172,22 +223,28 @@ def about_page():
         and predicts the mood associated with the text.
         
         **Features:**
-        - Input text and get mood predictions.
-        - Uses neural network for sentiment analysis.
-        - Uses models like Simple and GRU.
+        1) Input text and get mood predictions.
+        2) Uses neural network for sentiment analysis.
+        3) Uses models like Simple and GRU.
         
         **Author:**
-        - Developed by Our Team
-        - Souvik Banerjee [18700220074]
-        - Annana Karmakar [18700120053]
-        - Subhojeet Das [18700120037]
-        - Debanjan Chatterjee[18700120040]
+        
+         Developed by Our Team
+         
+         Souvik Banerjee [18700220074]
+         
+         Annana Karmakar [18700120053]
+         
+         Subhojeet Das [18700120037]
+         
+         Debanjan Chatterjee[18700120040]
         
         **Under Guidance Of:**
-        - Prof. Bikash Sadhukhan
+        
+         Prof. Bikash Sadhukhan
         
         **Github:**
-        - https://github.com/Souvik2376/Mood-Detection-Final 
+         https://github.com/Souvik2376/Mood-Detection-Final 
     """)
 
 
