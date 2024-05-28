@@ -40,12 +40,10 @@ justify-content: center;
 border-radius: 10%;
 """
 
-
-
 page_bg_img = f"""
 <style>
 [data-testid="stAppViewContainer"] > .main {{
-background-image: url("https://i.postimg.cc/kXH3Dmzc/background.png");
+background-image: url("https://i.postimg.cc/QtnqXrJT/mesh-1430108-1280.png");
 background-size: cover;
 background-position: center center;
 background-repeat: no-repeat;
@@ -56,8 +54,19 @@ background: rgba(0,0,0,0);
 }}
 </style>
 """
-
 st.markdown(page_bg_img, unsafe_allow_html=True)
+
+st.markdown("""
+<style>
+    [data-testid=stSidebar] {
+        background-image: url("https://i.postimg.cc/pXm65s9v/c15cbae66a8a930a1cb292aaf60bb815.jpg");
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: local;
+    }
+</style>
+""", unsafe_allow_html=True)
 
 
 def find(pattern, path):
@@ -105,8 +114,12 @@ def encode_sentence(sent):
 
 def predictor_page():
     html_temp = """
-    <div style="background-color:#84240c;padding:10px;border-radius:10px;">
-    <h2 style="color:white;text-align:center;"><b> Mood Detection Predictor </b></h2>
+    <div style="background-image: url("https://i.postimg.cc/pXm65s9v/c15cbae66a8a930a1cb292aaf60bb815.jpg");
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: local;">
+    <h1 style="color:#00FFFF;text-align:center;"><b> Mood Detection Predictor </b></h1>
     </div>
     """
     st.markdown(html_temp, unsafe_allow_html=True)
