@@ -8,6 +8,7 @@ import datetime
 import os
 import fnmatch
 import pandas as pd
+import textblob
 from textblob import TextBlob
 import random
 import keras
