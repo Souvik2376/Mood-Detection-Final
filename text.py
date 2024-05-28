@@ -9,8 +9,7 @@ import datetime
 import os
 import fnmatch
 import pandas as pd
-#from textblob import TextBlob
-from corpora import TextBlob
+from textblob import TextBlob
 import random
 import keras
 from keras.preprocessing import sequence
@@ -84,16 +83,16 @@ def predictor_page():
     if show_preds:
         positivity_scale = current_model(ip)
         p = positivity_scale
-        result = ["Hateful", "Demoralizing", "Neutral", "Calm", "Overwhelming", "Cheerful"]
-        if p <= 0.2:
+        result = ["Hateful", "Demoralizing", "Neutral", "Calm", "Overwhelming", "Vey Cheerful"]
+        if p <= 0.1:
             mood = result[0]
-        elif p <= 0.4:
+        elif p <= 0.3:
             mood = result[1]
         elif p <= 0.5:
             mood = result[2]
-        elif p <= 0.6:
+        elif p <= 0.7:
             mood = result[3]
-        elif p <= 0.8:
+        elif p <= 0.9:
             mood = result[4]
         else:
             mood = result[5]
