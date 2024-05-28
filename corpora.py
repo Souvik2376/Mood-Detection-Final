@@ -1,7 +1,11 @@
 import subprocess
+import sys
+
+# Get the full path to the Python executable
+python_executable = sys.executable
 
 # Command to download TextBlob corpora
-cmd = ['python3', '-m', 'textblob.download_corpora']
+cmd = [python_executable, '-m', 'textblob.download_corpora']
 
 # Execute the command
 try:
@@ -9,3 +13,4 @@ try:
     print("Corpora downloaded successfully!")
 except subprocess.CalledProcessError as e:
     print(f"Error downloading corpora: {e}")
+
