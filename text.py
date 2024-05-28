@@ -41,6 +41,25 @@ border-radius: 10%;
 """
 
 
+
+page_bg_img = f"""
+<style>
+[data-testid="stAppViewContainer"] > .main {{
+background-image: url("https://i.postimg.cc/kXH3Dmzc/background.png");
+background-size: cover;
+background-position: center center;
+background-repeat: no-repeat;
+background-attachment: local;
+}}
+[data-testid="stHeader"] {{
+background: rgba(0,0,0,0);
+}}
+</style>
+"""
+
+st.markdown(page_bg_img, unsafe_allow_html=True)
+
+
 def find(pattern, path):
     result = []
     for root, dirs, files in os.walk(path):
@@ -86,7 +105,7 @@ def encode_sentence(sent):
 
 def predictor_page():
     html_temp = """
-    <div style="background-color:#4CAF50;padding:10px;border-radius:10px;">
+    <div style="background-color:#84240c;padding:10px;border-radius:10px;">
     <h2 style="color:white;text-align:center;"><b> Mood Detection Predictor </b></h2>
     </div>
     """
@@ -121,7 +140,6 @@ def predictor_page():
         latest_iteration = st.empty()
         latest_iteration.text('Measured Percentage : ' + str(positivity_scale * 100) + " %")
         bar = st.progress(positivity_scale)
-        st.balloons()
 
 def about_page():
     html_temp = """
@@ -143,11 +161,17 @@ def about_page():
         **Features:**
         - Input text and get mood predictions.
         - Uses neural network for sentiment analysis.
-        - Uses models like LSTM, Bidirectional and GRU.
-        - Visual feedback with progress bar and balloons.
+        - Uses models like Simple and GRU.
         
         **Author:**
         - Developed by Our Team
+        - Souvik Banerjee [18700220074]
+        - Annana Karmakar [18700120053]
+        - Subhojeet Das [18700120037]
+        - Debanjan Chatterjee[18700120040]
+        
+        **Under Guidance Of:**
+        - Prof. Bikash Sadhukhan
         
         **Github:**
         - https://github.com/Souvik2376/Mood-Detection-Final 
