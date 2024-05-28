@@ -1,5 +1,6 @@
 import streamlit as st
 import streamlit.components.v1 as components
+import corpora
 import numpy as np
 import requests
 import json
@@ -8,7 +9,6 @@ import datetime
 import os
 import fnmatch
 import pandas as pd
-import textblob
 from textblob import TextBlob
 import random
 import keras
